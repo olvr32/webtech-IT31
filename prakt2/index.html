@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практична робота №2 - REST Countries API</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Підключаємо локальний Axios -->
+    <script src="axios.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Робота з публічним REST API</h1>
+
+        <!-- Блок 1: Fetch API (Україна) -->
+        <section class="card">
+            <h2>Інформація про Україну (Fetch API)</h2>
+            <div id="ukraine-info" class="loading">Завантаження...</div>
+        </section>
+
+        <!-- Блок 2: Axios API (Список країн) -->
+        <section class="card">
+            <h2>Список країн світу (Axios)</h2>
+            <button id="load-countries">Оновити / Завантажити країни</button>
+            <ul id="countries-list"></ul>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

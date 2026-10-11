@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Редагування даних студента</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Редагувати дані студента</h1>
+        <form action="/update" method="POST">
+            <label for="name">Ім'я:</label>
+            <input type="text" id="name" name="name" value="Матвій Запорожцев" required>
+
+            <label for="group">Група:</label>
+            <input type="text" id="group" name="group" value="ІТ-31" required>
+
+            <label for="message">Повідомлення:</label>
+            <textarea id="message" name="message" required>Вивчаю Express.js і це чудово!</textarea>
+
+            <button type="submit">Оновити дані</button>
+        </form>
+        <a href="/student">Переглянути профіль</a>
+    </div>
+</body>
+</html>
