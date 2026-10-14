@@ -6,18 +6,17 @@ const app = express();
 const PORT = 3000;
 const FILE_PATH = path.join(__dirname, 'student.json');
 
-// Початкові дані студента
 let studentData = {
     "name": "Матвій Запорожцев",
     "group": "ІТ-31",
     "message": "Вивчаю Express.js і це чудово!"
 };
 
-// Записуємо дані у файл student.json при першому запуску, якщо його немає
+// запис даних у файл student.json при першому запуску, якщо його немає
 if (!fs.existsSync(FILE_PATH)) {
     fs.writeFileSync(FILE_PATH, JSON.stringify(studentData, null, 2), 'utf8');
 } else {
-    // Якщо файл є — зчитуємо актуальні дані з нього
+    // якщо файл є — зчитуємо актуальні дані з нього
     const fileContent = fs.readFileSync(FILE_PATH, 'utf8');
     studentData = JSON.parse(fileContent);
 }
@@ -26,15 +25,15 @@ if (!fs.existsSync(FILE_PATH)) {
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Роздача статичних файлів із папки public
+// роздача статичних файлів із папки public
 app.use(express.static(path.join(__dirname, 'public')));
 
-// 1. Головна сторінка
+// головна сторінка
 app.get('/', (req, res) => {
     res.send('<h1>Вітаю на головній сторінці Express-сервера!</h1><p>Перейдіть на <a href="/student">/student</a> або скористайтеся <a href="/index.html">формою</a>.</p>');
 });
 
-// 2. Маршрут /student (HTML-сторінка з даними)
+// маршрут /student (HTML-сторінка з даними)
 app.get('/student', (req, res) => {
     res.send(`
         <!DOCTYPE html>
@@ -58,29 +57,28 @@ app.get('/student', (req, res) => {
     `);
 });
 
-// 3. Маршрут /json (повертає JSON)
+// маршрут /json (повертає JSON)
 app.get('/json', (req, res) => {
     res.json(studentData);
 });
 
-// 4. Маршрут /update (змінює дані через запит від форми)
+// маршрут /update (змінює дані через запит від форми)
 app.post('/update', (req, res) => {
     if (req.body.name) studentData.name = req.body.name;
     if (req.body.group) studentData.group = req.body.group;
     if (req.body.message) studentData.message = req.body.message;
 
-    // Зберігаємо оновлені дані у файл student.json
+    // зберігаємо оновлені дані у файл student.json
     fs.writeFile(FILE_PATH, JSON.stringify(studentData, null, 2), 'utf8', (err) => {
         if (err) {
             console.error("Помилка збереження файлу:", err);
         }
     });
 
-    // Перенаправляємо назад на сторінку студента
+    // перенаправляємо назад на сторінку студента
     res.redirect('/student');
 });
 
-// Запуск сервера
 app.listen(PORT, () => {
     console.log(`Сервер запущено на http://localhost:${PORT}`);
 });

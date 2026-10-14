@@ -1,14 +1,13 @@
 const http = require('http');
 const fs = require('fs');
 
-// Дані студента для виконання індивідуального завдання
 const studentData = {
     "name": "Запорожцев Матвій",
     "group": "ІТ-31",
     "message": "Я вчуся працювати з Node.js..."
 };
 
-// Записуємо дані у файл student.json при запуску сервера
+// запис даних у файл student.json при запуску сервера
 fs.writeFile('student.json', JSON.stringify(studentData, null, 2), 'utf8', (err) => {
     if (err) {
         console.error("Помилка запису student.json:", err);
@@ -17,7 +16,7 @@ fs.writeFile('student.json', JSON.stringify(studentData, null, 2), 'utf8', (err)
     }
 });
 
-// Створюємо HTTP-сервер
+// створення HTTP-сервера
 const server = http.createServer((req, res) => {
     if (req.url === '/') {
         res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
@@ -28,12 +27,12 @@ const server = http.createServer((req, res) => {
         res.end('<h1>Про нас</h1><p>Це приклад сервера на Node.js</p>');
     } 
     else if (req.url === '/student') {
-        // Вивід даних студента у форматі JSON
+        // вивід даних студента у форматі JSON
         res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
         res.end(JSON.stringify(studentData, null, 2));
     } 
     else if (req.url === '/student/html') {
-        // Вивід даних студента у вигляді відформатованої HTML-сторінки
+        // вивід даних студента у вигляді відформатованої HTML-сторінки
         res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
         res.end(`
             <!DOCTYPE html>
@@ -66,7 +65,7 @@ const server = http.createServer((req, res) => {
     }
 });
 
-// Запускаємо сервер на порту 3000
+// запуск сервера на порт 3000
 server.listen(3000, () => {
     console.log('Сервер працює на http://localhost:3000');
 });

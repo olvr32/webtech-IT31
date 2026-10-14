@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Особистий кабінет</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f7f6; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .card { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); width: 400px; text-align: center; }
+        h1 { color: #333; font-size: 22px; }
+        p { color: #666; margin-bottom: 25px; }
+        a.logout-btn { display: inline-block; padding: 10px 20px; background: #dc3545; color: white; text-decoration: none; border-radius: 4px; font-weight: bold; }
+        a.logout-btn:hover { background: #c82333; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Вітаємо, <span id="user-name">Користувач</span>!</h1>
+        <p>Ви успішно увійшли до захищеної панелі керування.</p>
+        <a href="/logout" class="logout-btn">Вийти</a>
+    </div>
+
+    <script>
+        // Динамічно підтягуємо ПІБ залогіненого користувача
+        fetch('/api/current-user')
+            .then(res => res.json())
+            .then(data => {
+                if (data.name) {
+                    document.getElementById('user-name').textContent = data.name;
+                }
+            });
+    </script>
+</body>
+</html>

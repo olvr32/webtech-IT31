@@ -1,4 +1,3 @@
-// 1. Запит через fetch (Інформація про Україну)
 function getUkraineData() {
     const ukraineDiv = document.getElementById("ukraine-info");
 
@@ -24,7 +23,6 @@ function getUkraineData() {
         });
 }
 
-// 2. Запит через axios (Список країн світу)
 function getAllCountries() {
     const listElement = document.getElementById("countries-list");
     listElement.innerHTML = "<li>Завантаження списку...</li>";
@@ -32,7 +30,6 @@ function getAllCountries() {
     axios.get("https://restcountries.com/v3.1/all")
         .then(response => {
             listElement.innerHTML = "";
-            // Беремо перші 15 країн для прикладу
             const countries = response.data.slice(0, 15);
 
             countries.forEach(country => {
@@ -47,8 +44,6 @@ function getAllCountries() {
         });
 }
 
-// Запуск при завантаженні сторінки
 getUkraineData();
 
-// Подія на кнопку оновлення
 document.getElementById("load-countries").addEventListener("click", getAllCountries);

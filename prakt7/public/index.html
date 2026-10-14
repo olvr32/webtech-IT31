@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Управління списком курсів</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Керування курсами (JSON БД)</h1>
+
+        <!-- Форма додавання / редагування -->
+        <form id="course-form">
+            <input type="hidden" id="course-id">
+            <input type="text" id="name" placeholder="Назва курсу..." required>
+            <input type="number" id="hours" placeholder="Кількість годин..." required>
+            <button type="submit" id="submit-btn">Додати курс</button>
+        </form>
+
+        <!-- Пошук / Фільтрація -->
+        <div class="filter-box">
+            <input type="text" id="search-input" placeholder="Пошук за назвою курсу..." oninput="filterCourses()">
+        </div>
+
+        <!-- Список курсів -->
+        <ul id="course-list"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

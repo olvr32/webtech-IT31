@@ -3,7 +3,7 @@ const taskList = document.getElementById('task-list');
 const titleInput = document.getElementById('title');
 const descInput = document.getElementById('description');
 
-// Отримати та відобразити всі завдання
+// отримати та відобразити всі завдання
 async function fetchTasks() {
     try {
         const response = await fetch('/api/tasks');
@@ -14,7 +14,7 @@ async function fetchTasks() {
     }
 }
 
-// Рендеринг списку на сторінці
+// рендеринг списку на сторінці
 function renderTasks(tasks) {
     taskList.innerHTML = '';
     tasks.forEach(task => {
@@ -37,7 +37,7 @@ function renderTasks(tasks) {
     });
 }
 
-// Додавання нового завдання (POST)
+// додавання нового завдання (POST)
 taskForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const title = titleInput.value.trim();
@@ -60,7 +60,7 @@ taskForm.addEventListener('submit', async (e) => {
     }
 });
 
-// Зміна статусу завдання (PUT)
+// зміна статусу завдання (PUT)
 async function toggleTaskStatus(id, currentStatus) {
     const newStatus = currentStatus === 'active' ? 'done' : 'active';
     try {
@@ -75,7 +75,7 @@ async function toggleTaskStatus(id, currentStatus) {
     }
 }
 
-// Видалення завдання (DELETE)
+// видалення завдання (DELETE)
 async function deleteTask(id) {
     try {
         await fetch(`/api/tasks/${id}`, {
@@ -87,5 +87,5 @@ async function deleteTask(id) {
     }
 }
 
-// Початкове завантаження завдань при відкритті сторінки
+// початкове завантаження завдань при відкритті сторінки
 fetchTasks();

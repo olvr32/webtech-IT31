@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "name": "Web Design",
+    "hours": 60
+  },
+  {
+    "id": 2,
+    "name": "JavaScript Basics",
+    "hours": 40
+  },
+  {
+    "id": 3,
+    "name": "Node.js Advanced",
+    "hours": 50
+  },
+  {
+    "id": 1791791257730,
+    "name": "Forward Course",
+    "hours": 88
+  }
+]

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Список покупок — Валідація</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Список покупок (Валідація даних)</h1>
+
+        <!-- Блок для виведення помилок валідації -->
+        <div id="error-container" class="error-box" style="display: none;"></div>
+
+        <!-- Форма додавання товару -->
+        <form id="shopping-form">
+            <div class="form-group">
+                <label for="item">Назва товару:</label>
+                <input type="text" id="item" name="item" required>
+            </div>
+
+            <div class="form-group">
+                <label for="quantity">Кількість:</label>
+                <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="category">Категорія:</label>
+                <input type="text" id="category" name="category" placeholder="Наприклад: Продукти" required>
+            </div>
+
+            <div class="form-group">
+                <label for="price">Ціна (грн):</label>
+                <input type="number" id="price" name="price" step="0.01" min="0.01" required>
+            </div>
+
+            <button type="submit">Додати покупку</button>
+        </form>
+
+        <hr>
+
+        <h2>Поточний список покупок</h2>
+        <ul id="shopping-list"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
