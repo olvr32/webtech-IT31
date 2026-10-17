@@ -1,29 +1,27 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Практична робота №2 - REST Countries API</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="axios.min.js"></script>
+  <meta charset="UTF-8">
+  <title>Практична робота №2 - Open Trivia DB</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="container">
+    <h1>Open Trivia Database</h1>
+    <p class="subtitle">Варіант 14: Вікторина з комп'ютерних наук</p>
 
-    <div class="container">
-        <h1>Робота з публічним REST API</h1>
-
-        <section class="card">
-            <h2>Інформація про Україну (Fetch API)</h2>
-            <div id="ukraine-info" class="loading">Завантаження...</div>
-        </section>
-
-        <section class="card">
-            <h2>Список країн світу (Axios)</h2>
-            <button id="load-countries">Оновити / Завантажити країни</button>
-            <ul id="countries-list"></ul>
-        </section>
+    <div class="buttons">
+      <button id="btnFetch">Завантажити питання (Fetch)</button>
+      <button id="btnAxios">Завантажити питання (Axios)</button>
     </div>
 
-    <script src="script.js"></script>
+    <div id="result" class="result-box">
+      <p>Оберіть метод вище, щоб завантажити 5 питань з API.</p>
+    </div>
+  </div>
+
+  <!-- Підключення бібліотеки Axios через CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
