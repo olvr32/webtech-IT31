@@ -1,0 +1,26 @@
+[
+  {
+    "id": "81582f67-a7f0-48af-b3d0-eb4731ff4d08",
+    "userId": "1704b3b0-0c3c-40f7-a00a-42c949e44805",
+    "title": "зробити салатік",
+    "completed": true,
+    "priority": "висока",
+    "createdAt": "2026-11-03T19:19:00.713Z"
+  },
+  {
+    "id": "df58f919-ccb2-4cca-a599-fe05a78a4700",
+    "userId": "1704b3b0-0c3c-40f7-a00a-42c949e44805",
+    "title": "попити кави",
+    "completed": false,
+    "priority": "середня",
+    "createdAt": "2026-11-03T19:19:10.841Z"
+  },
+  {
+    "id": "985dd5b8-3869-4d39-909a-f46a92d7b3a2",
+    "userId": "1704b3b0-0c3c-40f7-a00a-42c949e44805",
+    "title": "підготуватись до іспитів",
+    "completed": false,
+    "priority": "низька",
+    "createdAt": "2026-11-03T19:19:21.960Z"
+  }
+]

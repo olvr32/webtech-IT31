@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Мої завдання — Todo App</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="topbar">
+            <h1>Список завдань (Todo App)</h1>
+            <div>Вітаємо, <strong id="user-name">Користувач</strong>! <a class="logout-btn" href="/logout">Вийти</a></div>
+        </header>
+
+        <div id="error-box" class="error" hidden></div>
+        <section>
+            <h2 id="form-title">Додати завдання</h2>
+            <form id="task-form">
+                <input type="text" id="title" placeholder="Назва завдання..." maxlength="100" required>
+                <select id="priority">
+                    <option value="низька">Низька</option>
+                    <option value="середня" selected>Середня</option>
+                    <option value="висока">Висока</option>
+                </select>
+                <div class="form-buttons">
+                    <button id="save-btn" type="submit">Додати</button>
+                    <button id="cancel-btn" class="btn-secondary" type="button" hidden>Скасувати</button>
+                </div>
+            </form>
+        </section>
+
+        <section>
+            <h2>Мої завдання</h2>
+            <div class="filters">
+                <select id="filter-status">
+                    <option value="all">Усі</option>
+                    <option value="active">Невиконані</option>
+                    <option value="done">Виконані</option>
+                </select>
+                <select id="filter-priority">
+                    <option value="all">Усі пріоритети</option>
+                    <option value="низька">Низька</option>
+                    <option value="середня">Середня</option>
+                    <option value="висока">Висока</option>
+                </select>
+                <input type="search" id="search" placeholder="Пошук за назвою...">
+            </div>
+            <ul id="task-list"></ul>
+            <p id="empty-list" class="empty">Завдань поки немає</p>
+        </section>
+
+        <section class="statistics">
+            <h2>Статистика виконання</h2>
+            <p id="stat-text">0 із 0 завдань виконано</p>
+            <div class="chart-wrapper"><canvas id="myChart"></canvas></div>
+        </section>
+    </div>
+    <script src="/script.js"></script>
+</body>
+</html>

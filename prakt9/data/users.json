@@ -4,5 +4,11 @@
     "name": "Guest1",
     "email": "testingplace@gmail.com",
     "password": "$2b$12$6zdCePLyPK2i6LWrArabAO1dMf.F.v6JJXKTlCcoEWfUgWo4m9NiO"
+  },
+  {
+    "id": 1792569744762,
+    "name": "ggg",
+    "email": "hki@gmail.com",
+    "password": "$2b$12$22EnVuPHn/k9BZDswiAVp.r5HeY0bPSJDBsHOVuKn6bCZe8faBZv."
   }
 ]

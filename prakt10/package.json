@@ -1,0 +1,17 @@
+{
+  "name": "prakt10",
+  "version": "1.0.0",
+  "description": "Todo App з авторизацією (практична робота №10)",
+  "main": "app.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "connect-flash": "^0.1.1",
+    "express": "^5.3.0",
+    "express-session": "^1.19.0",
+    "express-validator": "^7.3.2"
+  }
+}

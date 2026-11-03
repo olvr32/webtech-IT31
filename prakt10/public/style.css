@@ -1,0 +1,95 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f6;
+    margin: 0;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+}
+.container {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 450px;
+}
+h1 {
+    font-size: 22px;
+    color: #333;
+    text-align: center;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+input, textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+button {
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+button:hover {
+    background-color: #218838;
+}
+ul {
+    list-style: none;
+    padding: 0;
+}
+li {
+    background: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+li.done {
+    background: #e2f0d9;
+    text-decoration: line-through;
+    color: #666;
+}
+.task-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+}
+.task-actions button {
+    padding: 5px 10px;
+    font-size: 12px;
+}
+.btn-toggle { background-color: #ffc107; color: #000; }
+.btn-delete { background-color: #dc3545; }
+/* Додаткові елементи Todo App; загальне оформлення залишено з prakt6. */
+.container { width: min(760px, 100%); }
+.topbar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+.topbar h1 { text-align: left; }
+.logout-btn { display: inline-block; padding: 8px 12px; margin-left: 10px; background: #dc3545; color: white; border-radius: 4px; text-decoration: none; }
+h2 { font-size: 18px; color: #333; margin-top: 24px; }
+.form-buttons, .filters { display: flex; gap: 8px; flex-wrap: wrap; }
+select { padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; background: white; }
+.filters { margin-bottom: 15px; }
+.filters > * { flex: 1 1 155px; }
+.filters input { min-width: 130px; }
+.form-buttons button { flex: 1; }
+.btn-secondary { background: #6c757d; }
+.btn-edit { background: #007bff; }
+.error { background: #f8d7da; border-radius: 4px; padding: 10px; color: #721c24; }
+.empty { text-align: center; color: #777; }
+.statistics { border-top: 1px solid #eee; padding-top: 12px; }
+.chart-wrapper { height: 230px; max-width: 330px; margin: 15px auto; }
+li.done strong { text-decoration: line-through; }
+[hidden] { display: none !important; }
+@media (max-width: 550px) { body { padding: 8px; } .container { padding: 14px; } }
